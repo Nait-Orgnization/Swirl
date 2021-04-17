@@ -1,0 +1,27 @@
+{
+  "name": "Swirl",
+  "version": "1.0.0",
+  "description": "* Ibrahim Banat (Team Leader) * Ayah Smadi * Tamara Albilleh * Neveen Beiram * As-har Abuhelweh",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nait-Orgnization/Swirl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nait-Orgnization/Swirl/issues"
+  },
+  "homepage": "https://github.com/Nait-Orgnization/Swirl#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "view-engine": "^1.1.1"
+  }
+}
