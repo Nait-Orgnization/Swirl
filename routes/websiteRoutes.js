@@ -12,7 +12,7 @@ const detailsPage = (req, res) => {
 
   let placeIdUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${city}&key=${placeIdApiKey}&type=tourist_attraction`;
 
-  res.send(placeJsonData);
+  // res.send(placeJsonData);
 };
 
 module.exports = {
