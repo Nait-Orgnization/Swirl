@@ -17,6 +17,7 @@ const homePage = (req, res) => {
 // generalFunction();
 
 const detailsPage = (req, res) => {
+  let globalArray = [];
   let city = req.body.city;
   let placeIdApiKey = process.env.placeIdApiKey;
 
@@ -31,8 +32,14 @@ const detailsPage = (req, res) => {
   let bookfunction = searchBook(city);
   bookfunction.then((arr)=> {
     globalArray.push(arr);
-    res.send(globalArray);
+    let eventFunction = eventRenderHandler(city);
+    eventFunction.then(eventArray =>{
+
+      globalArray.push(eventArray);
+      res.send(globalArray);
+    });
   });
+
 
 
 };
@@ -56,6 +63,32 @@ const searchBook=(city)=>{
     });
 
 };
+
+function eventRenderHandler (city){
+  let key = process.env.EVENT_KEY;
+  let url = `https://app.ticketmaster.com/discovery/v2/events?apikey=${key}&city=${city}&sort=random`;
+
+  return superagent.get (url)
+    .then (eventData=>{
+      if (!eventData.body._embedded){
+        let ev=['Sorry ,No Events Available'];
+        return ev;
+      }else {
+        let eData = eventData.body._embedded.events;
+        let ev = [];
+        for (let i=0;i<eData.length;i++){
+          if (i > 1){
+            if (eData[i].name.includes(eData[i-1].name)){
+              continue;
+            }else {
+              ev.push( new constructors.Event (eData[i]));
+              return ev;
+            }
+          }}
+      }
+
+    });
+}
 
 module.exports = {
   homePage,
