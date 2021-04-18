@@ -6,10 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
-    <% placesArray.forEach(element => { %>
-    <h2><%= element.placeName %></h2>
-    <img src="<%= element.photo %>" alt="" />
-    <% }); %>
+  <body> 
+    <!-- {method: property}  -->
+    
+   <section>
+    
+    <% details[0].london.forEach(element => { %>
+      <div>
+        <img src="<%= element.photo %> " alt="">
+        <h2>
+          <%= element.placeName %> 
+        </h2>
+        <h4><%= element.Adress %> </h4>
+        <p><%= element.rating %> </p>
+        </div>  
+ <%  }); %>
+   
+   </section>
+   <section>
+    <% details[1].forEach(book => {%>
+      <img src="<%= book.imgUrl %>" alt="">
+      <h2><%= book.title %></h2>
+      <h4><%= book.author %></h4>
+      <p><%= book.description %></p>
+   <% }) %> 
+   </section>
+   <section>
+    <% details[2].forEach(event => { %>
+      <section>
+          <h2><%= event.name %> </h2>
+          <h3><%= event.dateAndTime %> </h3>
+          <p>Timezone  : <%= event.timeZone %> </p>
+          <a href="<%= event.url  %> "> <img src="<%= event.image %> " alt="Event Image"></a>
+          <p>Event Id is : <%= event.id %> </p>
+          <ul>Available Venues are :
+              <% for (let i=0;i<event.venues.length;i++){ %>
+                  <li><%= event.venues[i][0] %></li>
+                  <a href="<%= event.venues[i][1] %>">Click Here To Book Tickets</a>
+              <% }; %>
+          </ul>
+      </section>
+  <% }); %>
+   </section>
   </body>
 </html>
