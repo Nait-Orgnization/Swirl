@@ -16,8 +16,21 @@ function Book(oneBook){
   this.imgUrl = oneBook.volumeInfo.imageLinks? oneBook.volumeInfo.imageLinks.thumbnail : 'https://i.imgur.com/J5LVHEL.jpg';
 }
 
+function Event (eventData){
+  this.name = eventData.name ;
+  this.url = eventData.url;
+  this.id = eventData.id;
+  this.image = eventData.images[0].url;
+  this.dateAndTime =`This Event Starts on ${eventData.dates.start.localDate} at ${eventData.dates.start.localTime}`;
+  this.timeZone = eventData.dates.timezone;
+  this.venues = eventData._embedded.venues.map(venue=>{
+    return [venue.name , venue.url];
+  });
+}
+
 module.exports = {
   Place,
   placesArray,
   Book,
+  Event,
 };
