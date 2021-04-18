@@ -16,7 +16,9 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 
+//routes
 app.get('/', websiteRoutes.homePage);
+app.post('/details', websiteRoutes.detailsPage);
 
 app.listen(PORT, () => {
   console.log('app is running');

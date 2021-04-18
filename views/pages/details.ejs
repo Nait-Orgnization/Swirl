@@ -7,7 +7,9 @@
     <title>Document</title>
   </head>
   <body>
-    <h2><%= data %></h2>
-    <%- include('../partials/searchForm' ) %>
+    <% placesArray.forEach(element => { %>
+    <h2><%= element.placeName %></h2>
+    <img src="<%= element.photo %>" alt="" />
+    <% }); %>
   </body>
 </html>
