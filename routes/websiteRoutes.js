@@ -36,7 +36,8 @@ const detailsPage = (req, res) => {
     eventFunction.then(eventArray =>{
 
       globalArray.push(eventArray);
-      res.send(globalArray);
+      // res.send(globalArray);
+      res.render('pages/details' , {details : globalArray}) ;
     });
   });
 
@@ -82,9 +83,13 @@ function eventRenderHandler (city){
               continue;
             }else {
               ev.push( new constructors.Event (eData[i]));
-              return ev;
+              if (ev.length >= 6){
+                break;
+              }
             }
           }}
+        return ev;
+
       }
 
     });
