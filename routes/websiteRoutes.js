@@ -11,9 +11,9 @@ const homePage = (req, res) => {
 const pg = require('pg');
 const client = new pg.Client({
   connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  // ssl: {
+  //   rejectUnauthorized: false,
+  // },
 });
 client.connect();
 
@@ -75,23 +75,24 @@ function eventRenderHandler(city) {
 
   return superagent.get(url).then(eventData => {
     if (!eventData.body._embedded) {
-      let ev = ['Sorry ,No Events Available'];
+      let ev = [{name :'Sorry ,No Events Available' , url :'Sorry ,No Events Available',id : 'no id available',image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',dateAndTime: 'none - available',timeZone:'unknown',venues: 'no venues available',venuesURL:'no url available'} ];
+      ev.length =1;
       return ev;
     } else {
       let eData = eventData.body._embedded.events;
       let ev = [];
       for (let i = 0; i < eData.length; i++) {
-        if (i > 1) {
-          if (eData[i].name.includes(eData[i - 1].name)) {
-            continue;
-          } else {
-            ev.push(new constructors.Event(eData[i]));
-            if (ev.length >= 6) {
-              break;
-            }
-          }
+        // if (i > 1) {
+        // if (eData[i].name.includes(eData[i - 1].name)) {
+        // continue;
+        // } else {
+        ev.push(new constructors.Event(eData[i]));
+        if (ev.length >= 6) {
+          break;
         }
       }
+      // }
+      // }
       return ev;
     }
   });

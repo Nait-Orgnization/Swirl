@@ -31,21 +31,18 @@
    <% }) %> 
    </section>
    <section>
-    <% details[2].forEach(event => { %>
-      <section>
-          <h2><%= event.name %> </h2>
-          <h3><%= event.dateAndTime %> </h3>
-          <p>Timezone  : <%= event.timeZone %> </p>
-          <a href="<%= event.url  %> "> <img src="<%= event.image %> " alt="Event Image"></a>
-          <p>Event Id is : <%= event.id %> </p>
-          <ul>Available Venues are :
-              <% for (let i=0;i<event.venues.length;i++){ %>
-                  <li><%= event.venues[i][0] %></li>
-                  <a href="<%= event.venues[i][1] %>">Click Here To Book Tickets</a>
-              <% }; %>
-          </ul>
-      </section>
-  <% }); %>
+     <%= console.log (details[2]) %> 
+          <% details[2].forEach(event => { %>
+            <section>
+                <h2><%= event.name %> </h2>
+                <h3><%= event.dateAndTime %> </h3>
+                <p>Timezone  : <%= event.timeZone %> </p>
+                <a href="<%= event.url  %> "> <img src="<%= event.image %> " alt="Event Image"></a>
+                <p>Event Id is : <%= event.id %> </p>
+                <p>Available Venues :  <a href="<%= event.venuesURL %>"><%= event.venues %></a> </p>
+            </section>
+        <% }); %>
+       
    </section>
   </body>
 </html>

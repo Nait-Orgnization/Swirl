@@ -17,15 +17,53 @@ function Book(oneBook){
 }
 
 function Event (eventData){
-  this.name = eventData.name ;
-  this.url = eventData.url;
-  this.id = eventData.id;
-  this.image = eventData.images[0].url;
-  this.dateAndTime =`This Event Starts on ${eventData.dates.start.localDate} at ${eventData.dates.start.localTime}`;
-  this.timeZone = eventData.dates.timezone;
-  this.venues = eventData._embedded.venues.map(venue=>{
-    return [venue.name , venue.url];
-  });
+  if (!eventData.name){
+    this.name = 'no name available ';
+  }else {
+    this.name = eventData.name ;
+  }
+
+  if (!eventData.url){
+    this.url = 'no url available ';
+  }else {
+    this.url = eventData.url;
+  }
+
+  if (!eventData.id){
+    this.id = 'no id available ';
+  }else {
+    this.id = eventData.id;
+  }
+
+  if (!eventData.images){
+    this.image = 'https://www.ecpgr.cgiar.org/fileadmin/templates/ecpgr.org/Assets/images/No_Image_Available.jpg';
+  }else {
+    this.image = eventData.images[0].url;
+  }
+
+  if (!eventData.dates){
+    this.dateAndTime = 'Unknown';
+  }else {
+    this.dateAndTime =`This Event Starts on ${eventData.dates.start.localDate} at ${eventData.dates.start.localTime}`;
+  }
+  if (!eventData.dates.timezone){
+    this.timeZone = 'Unknown';
+  }else {
+    this.timeZone = eventData.dates.timezone;
+  }
+
+  if (!eventData._embedded.venues){
+    this.venues = 'no venue available';
+  }else {
+    this.venues = eventData._embedded.venues[0].name;
+  }
+  if (!eventData._embedded.venues){
+    this.venuesURL = 'no venue available';
+  }else {
+    this.venuesURL = eventData._embedded.venues[0].url;
+
+  }
+
 }
 
 module.exports = {
