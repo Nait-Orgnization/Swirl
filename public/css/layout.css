@@ -1,7 +1,7 @@
 /* hero section */
 
 .hero {
-  background: url('../assets/hero-background.png');
+  background: url("../assets/hero-background.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   height: 100vh;
@@ -9,8 +9,8 @@
 }
 .hero {
   display: grid;
-  grid-template-columns: calc(((200 / 1360) * 100%)) calc(((960 / 1360) * 100%)) calc(
-      ((200 / 1360) * 100%)
+  grid-template-columns: calc(((100 / 1360) * 100%)) calc(((1160 / 1360) * 100%)) calc(
+      ((100 / 1360) * 100%)
     );
   grid-template-rows: calc((75 / 654) * 100%) calc((579 / 654) * 100%);
   grid-column-gap: 0px;
@@ -47,7 +47,7 @@
 .form .f--upper {
   width: 100%;
 }
-.form input[type='text'] {
+.form input[type="text"] {
   width: 100%;
   height: 3em;
   z-index: 3;
@@ -78,4 +78,97 @@
   width: calc((240 / 960) * 100%);
 }
 
-/* tips page  */
+
+/* Second section  */
+.info--content {
+  display: grid;
+  grid-template-columns: calc(((100 / 1360) * 100%)) calc(((1160 / 1360) * 100%)) calc(
+      ((100 / 1360) * 100%)
+    );
+  grid-template-rows: calc((40 / 654) * 100%) calc((614 / 654) * 100%);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 0em 1.875em;
+}
+
+.content--wrapper img {
+  margin: 2.5rem 0;
+  width: 100%;
+}
+.content--wrapper {
+  grid-area: 2/2/2/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info--desc span {
+  font-weight: 600;
+}
+
+/* Third section */
+.more--content {
+  display: grid;
+  grid-template-columns: calc(((100 / 1360) * 100%)) calc(((1160 / 1360) * 100%)) calc(
+    ((100 / 1360) * 100%)
+  );
+  grid-template-rows: calc((40 / 654) * 100%) calc((614 / 654) * 100%);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 0em 1.875em;
+}
+.img--ctr{
+  background: url('../assets/photo.jpg');
+  width:100%;
+  height: 31.25rem;
+  background-position: 30%  50%;
+}
+.more--wrapper {
+  grid-area: 2/2/2/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.more--desc span {
+  font-weight: 600;
+}
+/* Fourth section */
+.grid--ctr{
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(188px, 1fr) );
+  gap: 10px;
+  grid-area: 2/2/2/3;
+  
+}
+.cards--content{
+  display: grid;
+  grid-template-columns: calc(((100 / 1360) * 100%)) calc(((1160 / 1360) * 100%)) calc(
+    ((100 / 1360) * 100%)
+  );
+  grid-template-rows: calc((40 / 654) * 100%) calc((614 / 654) * 100%);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 0em 1.875em;
+}
+.recommend--ctr {
+  height: 371px;
+  margin-bottom: 30px;
+}
+.recommend--ctr h5{
+  margin: 4px 0px 8px 0px;
+  font-size: 16px;
+}
+.recommend--ctr h6{
+  
+  font-size: 12px;
+  color: silver;
+}
+.recommend--ctr p{
+  margin-bottom: 5px;
+  font-size: 12px;
+  
+}
+
+.recommend--ctr img{
+  height: 240px;
+  width: 100%;
+}

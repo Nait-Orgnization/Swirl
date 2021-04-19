@@ -1,10 +1,11 @@
 const superagent = require('superagent');
 const constructors = require('./constructors');
 const placeJsonData = require('../places.json');
+const recommend = require('../data/recomend.json');
 let globalArray = [];
 
 const homePage = (req, res) => {
-  res.render('pages/index', { data: 'working' });
+  res.render('pages/index', { recommend: recommend });
 };
 
 //DATABASE
