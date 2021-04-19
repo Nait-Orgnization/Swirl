@@ -1,102 +1,22 @@
 {
-    "london": [
-      {
-        "placeName": "lastminute.com London Eye",
-        "Adress": "Riverside Building, County Hall, South Bank, London SE1 7PB, United Kingdom",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwLC8Kxy1NKGjiEYTiG2UxAdb-Ho4iVNtl5Bk0ETVV7k87mrRNwrEliLbd8jOtD8AilBuUeQ1BhgpzmIryKka2H83kWw_4-Nhi98bf8_ApmlABJOeKN3ToyTMoS0px2OIaCIBpXKEVuLhQH0X53yby_VAw4BBnFb5Hi54dCfHFSwYq6q&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 4.5
-      },
-      {
-        "placeName": "SEA LIFE Centre London Aquarium",
-        "Adress": "Riverside Building, County Hall, Westminster Bridge Rd, South Bank, London SE1 7PB, United Kingdom",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwILsEVCJ5-MkI3D9HLXKBelJMCYp2ujdaKXbvTGk5febCVCHEO-2Qhx6mZGlQG09tLBCDDplouuNPhE5PVzAg4K_jag_bwcMz3mt2Qjae7GyyEN4jnlUXujc_Xby0MaYxg_C-P8CouWsH9mXjeuDH3_WUz-x45GypIxrdf1EwdjI4t9&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 4.3
-      },
-      {
-        "placeName": "Tower of London",
-        "Adress": "St Katharines & Wapping, London EC3N 4AB, United Kingdom",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwJSa9Vugq7Yjk0HFvqaiwDivEKiiof7tC7tXBY4wpSZ9TTz3Q4_VPKb1_wHhwtqn8IkiMMszfuNcRrTHDvavEzEKduGhzEFNNnxXOmtttFEX3d1QcbXPum9WI-8V9FoyMz9NLR7pSFZ_oe_RFRjTBJI5G6ITPQuNCMZa02Okyww5sKC&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 4.6
-      }
-    ],
-    "paris": [
-      {
-        "placeName": "Arc de Triomphe",
-        "Adress": "Place Charles de Gaulle, 75008 Paris, France",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwKZtwGpkh7sSqjwrmrMJsKDnbvKxanAS_ZYV5hbbg0Fy1nGY7LQwVwlRAhEDb5VNlZ3fzWmmHG3wYDnx4hiPfh9CKNH6pqEh5mQLI_BQ4kycqcplVtgK2KW4_9_1KqXIwR63SPmRfFmC_iMglAccCa6CyO8Fb3XblZ3-3EsHRPSPQRn&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 4.7
-      },
-      {
-        "placeName": "Cathédrale Notre-Dame de Paris",
-        "Adress": "6 Parvis Notre-Dame - Pl. Jean-Paul II, 75004 Paris, France",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwJJg2NAHSwQ6FCUXDHCyHHVy1k7xSdbCEBHtcxggo0YxMCyMMf8CxhIPXlHfCNJpWCjLdNlFUibbR6LkxOlZTWpzJr7uFkWykaQoJgbcVh4uHce6QNBn_qTDff0-9pH8Xke4hn7b8OJaCHvwhr7KPvi_ab_ogySx0x8gVm9eVTB3v1g&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 4.7
-      },
-      {
-        "placeName": "Tours of Paris",
-        "Adress": "1 Boulevard Poissonnière, 75002 Paris, France",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwL1SqXzkr0n2_9z5cpbJclHkuDIOcF3nwvbwopcft2ijEotYLtQR4rF4RIh-MFFfWHD0YSyS1PjGLXajQ7Aq9EX5sOfOPhVUsWsqErwtvn1kQdcNO8hhR5Z1JYYNcatQHHcs2FwA3fHs58Xq4qProF7MHvqSQ7DVnB70oY1A2fS04AO&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 4.7
-      }
-    ],
-    "barcelona": [
-      {
-        "placeName": "Old Town",
-        "Adress": "Carrer del Call, 12, 22, 08002 Barcelona, Spain",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwKOdjqcBFyN-fM8I847E5Z_IU9GkNz3XtMJyr043f-Yqhd9GXSMexWa4AC6AFTyG_O4naEE4ylGd9IWI8qSJ2rPqTFDbZNdE5pJpZkB0n3RtbttQbeT5K_MZubyNdGHh_FUIshzWqyNIdCaEHpX9_NiYmgKgOPksoxm143qcg4oBIuI&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 4.5
-      },
-      {
-        "placeName": "Rambla De Mar",
-        "Adress": "Rambla de Mar, s/n, 08039 Barcelona, Spain",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwIMHvySuX_5OvSYdcW-BnU-sHmmId8R2oWshpcH6S4BXun6dKHQwwf4WrViuRthf0tJYxXQbIS_7dA2E4G7vNmF4RfjmixNIwzM1CeHjJOoKm4mZ-UUZsAdbunVelwO0Ap0kidYFLO2AsjUuxTktMYUuHAsbnQ4ONBvubdCCKq1TNvV&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 4.6
-      },
-      {
-        "placeName": "Casa Milà",
-        "Adress": "Passeig de Gràcia, 92, 08008 Barcelona, Spain",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwJvGLfiXQGTeld6-zECH67MgyXlf5NDDcEgVKLvxTqXnWRmAbAfckOyiXn-ooGIAXgKXh6RYuC3HTq8GyVDjFcIwqOAmtmBNbWCeayrv-zCodAzHoVfsxSrkvMJIZIkC6CHzbgX1AVdL5fF-JeTSsf76Fr0ZZYOlAmg2nu2oXwJLAzL&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 4.6
-      }
-    ],
-    "santorini": [
-      {
-        "placeName": "Ammoudi Bay",
-        "Adress": "Unnamed Rd,, Ormos Ammoudiou 847 02, Greece",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwKRFwWASYn-wF4Ycx-5oPHPBcGTbvEe0msBZZ_qe99g6YhJf9cqPLFRck7tj1wUq3svyEv1SH7vDv1GoduNCJbUZpK7Xh0m3-yKkqKcB7ddn-_6IbWy3cm18uzioOLyNYhwjr2cz5J7H1jS4bgHXj9WtGARDS1KiV3VwdnkyQcqCNzo&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 4.6
-      },
-      {
-        "placeName": "Menhir",
-        "Adress": "Unnamed Road, Santorini 847 00, Greece",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwLYtCh02ZP0tGWqhWWiPObG8cW_e-tthD9LTllExyNsIjyaG8cUikf1wvGIDMMTE4b4TfNXqsqciRCqXb7LI1M83AZlPgnYj8MBp5bxijzGWIBMPBDkN5uG_eyQgccP2NwPAR55oNrfn6pp5PmEkpiA6982c-GlllFsSSokUR81g1hn&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 2
-      },
-      {
-        "placeName": "Red Beach viewing point",
-        "Adress": "Unnamed Road, Santorini 847 00, Greece",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwIV5KUuk4d9TLyi5OsuhAwbH_yTnHQrH8WxW9qoiVGXvQKomrGjO2uWmDwXBVkh8MAyb3NwENqR49XnBdz6GbQ7Q_5-lY4e2sQoNB4IW2y5VlXGqSfSNCAt9ZU-mlLwIm10wAlJf9qohlRPBWd9YFpcOQwp7cKNWfIsXFihHZQK4ko&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 5
-      }
-    ],
-    "dublin": [
-      {
-        "placeName": "Dublin Castle",
-        "Adress": "Dame St, Dublin 2, Ireland",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwIvPa0MShTwcA62qGndIGKRYjGx9F1cfyOdMACqTnSSEaKY1Gtb6ERXNRD3gtuQQnY9Hhi0r_C-ugCLUZDEvpJqVoAcDuuBirElS26_A3yO2Fo3GzQ6Zy3la843y92baMLvl4o6fnbxlBmoCGdCQMHb0ujiQbT73aPsIOppXU1UXFG-&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 4.2
-      },
-      {
-        "placeName": "The Book of Kells",
-        "Adress": "The University of Dublin Trinity College, College Green, Dublin, Ireland",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwKc_tLNmvA8J_sjO0B5wMsj3EFjYL0hAHAMliTlradHSUJFqUVmHPSEOBBNkBymUF6Cw5CBaXh5KropNyUgoEVpIHagLzFsXLNUD-WHbdLqyveF-RwFNZN0xC-qMTtBsj8AOpGz7gnpy1mMdUJ2NP7mCVWjNplHhelYgd5IwnaBsKDb&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 4.4
-      },
-      {
-        "placeName": "Guinness Storehouse",
-        "Adress": "St. James's Gate, Dublin 8, D08 VF8H, Ireland",
-        "photo": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=ATtYBwIzPokJqM7VvrlrsTvNSRZA589plYkHn-xYXQN8QnIb6pisVVejjM05szFiPLqAwQHKsp6hB3Kv4rmUOV8DGiK08ZFDXCn9aM72L97_BfTaQZZ_cykZJsyH0B9mN9_y5d3t-W36Dj7O7GjcyVK1HLUf4MVuOtaDTCFV7xiHlKlIxcvB&key=AIzaSyDI7nfYaSUkPvEu9JHIY2bZN-8MS8kE5OQ",
-        "rating": 4.4
-      }
-    ]
-  }
+  "london": [
+    {
+      "placeName": "lastminute.com London Eye",
+      "Adress": "Riverside Building, County Hall, South Bank, London SE1 7PB, United Kingdom",
+      "photo": "https://picsum.photos/536/354",
+      "rating": 4.5
+    },
+    {
+      "placeName": "SEA LIFE Centre London Aquarium",
+      "Adress": "Riverside Building, County Hall, Westminster Bridge Rd, South Bank, London SE1 7PB, United Kingdom",
+      "photo": "https://picsum.photos/536/354",
+      "rating": 4.3
+    },
+    {
+      "placeName": "Tower of London",
+      "Adress": "St Katharines & Wapping, London EC3N 4AB, United Kingdom",
+      "photo": "https://picsum.photos/536/354",
+      "rating": 4.6
+    }
+  ]
+}

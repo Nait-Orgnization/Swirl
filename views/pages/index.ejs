@@ -4,10 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <h2><%= data %></h2>
-    <%- include('../partials/searchForm' ) %>
+    <section class="hero">
+      <%- include('../partials/header') %>
+      <div class="hero--content">
+        <div class="content--text">
+          <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+            repudiandae quia accusantium omnis? Unde, explicabo! Nam accusamus
+            aspernatur fugit?
+          </p>
+        </div>
+        <div class="content--form">
+          <%- include('../partials/searchForm' ) %>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

@@ -7,17 +7,15 @@ const homePage = (req, res) => {
   res.render('pages/index', { data: 'working' });
 };
 
-
 //DATABASE
-const pg =require('pg');
-const client = new pg.Client( {
+const pg = require('pg');
+const client = new pg.Client({
   connectionString: process.env.DATABASE_URL,
-  // ssl: {
-  //   rejectUnauthorized : false
-  // }
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 client.connect();
-
 
 // function generalFunction(req, res)  {
 //   .then(item => {
@@ -29,7 +27,7 @@ client.connect();
 // generalFunction();
 
 const detailsPage = (req, res) => {
-  let globalArray = [];
+  globalArray = [];
   let city = req.body.city;
   let placeIdApiKey = process.env.placeIdApiKey;
 
@@ -42,129 +40,114 @@ const detailsPage = (req, res) => {
   //   res.send(result);
   // });
   let bookfunction = searchBook(city);
-  bookfunction.then((arr)=> {
+  bookfunction.then(arr => {
     globalArray.push(arr);
     let eventFunction = eventRenderHandler(city);
-    eventFunction.then(eventArray =>{
-
+    eventFunction.then(eventArray => {
       globalArray.push(eventArray);
       // res.send(globalArray);
-      res.render('pages/details' , {details : globalArray}) ;
+      res.render('pages/details', { details: globalArray });
     });
   });
-
-
-
 };
 
-const searchBook=(city)=>{
+const searchBook = city => {
   // let query = req.body.query;
-  let bookURL=`https://www.googleapis.com/books/v1/volumes?q=intitle:${city}&maxResults=3`;
+  let bookURL = `https://www.googleapis.com/books/v1/volumes?q=intitle:${city}&maxResults=3`;
 
-  return superagent.get(bookURL)
-    .then(result=> {
-      let bookData = result.body.items;
-      let bookArr = bookData.map(item => {
-        return new constructors.Book (item); });
-      // res.send(bookArr);// for testing
-      // res.render('pages/details',{renderBookData:bookArr} );
-      // globalArray.push(bookArr);
-      // return globalArray
-      // globalArray.push(bookArr);
-      return bookArr;
-
+  return superagent.get(bookURL).then(result => {
+    let bookData = result.body.items;
+    let bookArr = bookData.map(item => {
+      return new constructors.Book(item);
     });
-
+    // res.send(bookArr);// for testing
+    // res.render('pages/details',{renderBookData:bookArr} );
+    // globalArray.push(bookArr);
+    // return globalArray
+    // globalArray.push(bookArr);
+    return bookArr;
+  });
 };
 
-function eventRenderHandler (city){
+function eventRenderHandler(city) {
   let key = process.env.EVENT_KEY;
   let url = `https://app.ticketmaster.com/discovery/v2/events?apikey=${key}&city=${city}&sort=random`;
 
-  return superagent.get (url)
-    .then (eventData=>{
-      if (!eventData.body._embedded){
-        let ev=['Sorry ,No Events Available'];
-        return ev;
-      }else {
-        let eData = eventData.body._embedded.events;
-        let ev = [];
-        for (let i=0;i<eData.length;i++){
-          if (i > 1){
-            if (eData[i].name.includes(eData[i-1].name)){
-              continue;
-            }else {
-              ev.push( new constructors.Event (eData[i]));
-              if (ev.length >= 6){
-                break;
-              }
+  return superagent.get(url).then(eventData => {
+    if (!eventData.body._embedded) {
+      let ev = ['Sorry ,No Events Available'];
+      return ev;
+    } else {
+      let eData = eventData.body._embedded.events;
+      let ev = [];
+      for (let i = 0; i < eData.length; i++) {
+        if (i > 1) {
+          if (eData[i].name.includes(eData[i - 1].name)) {
+            continue;
+          } else {
+            ev.push(new constructors.Event(eData[i]));
+            if (ev.length >= 6) {
+              break;
             }
-          }}
-        return ev;
-
+          }
+        }
       }
-
-    });
+      return ev;
+    }
+  });
 }
 
-
-
-function tipsHandler(req,res){
-  let SQL=`SELECT * FROM tips ;`;
-  client.query(SQL)
-    .then (tipsData=>{
+function tipsHandler(req, res) {
+  let SQL = `SELECT * FROM tips ;`;
+  client
+    .query(SQL)
+    .then(tipsData => {
       // console.log(tipsData.rows);
       // res.send(tipsData.rows);
-      res.render('pages/useful',{tips:tipsData.rows});
+      res.render('pages/useful', { tips: tipsData.rows });
     })
-    .catch(error=>{
+    .catch(error => {
       console.log(error);
     });
 }
 
-function addTip(req,res){
-  let {title,description}=req.body;
-  let SQL=`INSERT INTO tips (title,description)VALUES ($1,$2) RETURNING *;`;
-  let safeValues=[title,description];
-  client.query(SQL,safeValues)
-    .then(() =>{
-      // console.log(results.rows[0]);
-      // res.send(results.rows);
-      res.redirect(`/tips`);
-    });
+function addTip(req, res) {
+  let { title, description } = req.body;
+  let SQL = `INSERT INTO tips (title,description)VALUES ($1,$2) RETURNING *;`;
+  let safeValues = [title, description];
+  client.query(SQL, safeValues).then(() => {
+    // console.log(results.rows[0]);
+    // res.send(results.rows);
+    res.redirect(`/tips`);
+  });
 }
 
-function editTip(req,res){
+function editTip(req, res) {
   // console.log(req.params);
-  let SQL=`SELECT * FROM tips WHERE id=$1;`;
-  let safeValues=[req.params.id];
+  let SQL = `SELECT * FROM tips WHERE id=$1;`;
+  let safeValues = [req.params.id];
   // console.log(safeValues);
-  client.query(SQL,safeValues)
-    .then(results=>{
-      // res.send(results.rows[0]);
-      console.log(results.rows);
-      res.render('pages/editTip',{edit:results.rows[0]});
-    });
+  client.query(SQL, safeValues).then(results => {
+    // res.send(results.rows[0]);
+    console.log(results.rows);
+    res.render('pages/editTip', { edit: results.rows[0] });
+  });
 }
 
-function deleteTip(req,res){
+function deleteTip(req, res) {
   let SQL = `DELETE FROM tips WHERE id=$1;`;
   let value = [req.params.id];
-  client.query(SQL,value)
-    .then(res.redirect('/tips'));
+  client.query(SQL, value).then(res.redirect('/tips'));
 }
 
-function updateTip(req,res){
-  let {title,description} = req.body;
+function updateTip(req, res) {
+  let { title, description } = req.body;
   let SQL = `UPDATE tips SET title=$1,description=$2 WHERE id=$3;`;
-  let safeValues = [title,description,req.params.id];
-  client.query(SQL,safeValues)
-    .then(()=>{
-      res.redirect(`/showTip/${req.params.id}`);
-    });
+  let safeValues = [title, description, req.params.id];
+  client.query(SQL, safeValues).then(() => {
+    res.redirect(`/showTip/${req.params.id}`);
+  });
 }
-
-
 
 module.exports = {
   homePage,
