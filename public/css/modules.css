@@ -1,0 +1,7 @@
+nav {
+  width: calc((720 / 960) * 100%);
+  display: flex;
+  gap: 0.9375em;
+  justify-content: flex-end;
+  color: white;
+}
