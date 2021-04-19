@@ -1,16 +1,21 @@
 const superagent = require('superagent');
 const constructors = require('./constructors');
 const placeJsonData = require('../places.json');
+const recommend = require('../data/recomend.json');
 let globalArray = [];
 
 const homePage = (req, res) => {
+
+  
+
   // res.render('pages/index', { data: 'working' });
   let SQL =`SELECT * FROM places ;`;
   client.query(SQL)
     .then(result=>{
       console.log(result.rows);
-      res.render('pages/index',{fav:result.rows});
+      res.render('pages/index',{fav:result.rows, recommend: recommend});
     });
+
 };
 
 //DATABASE

@@ -1,0 +1,11 @@
+<div class = "grid--ctr">
+    <% recommend.recommend.forEach(element => {%>
+        <div class="recommend--ctr">
+            <img src="<%= element.img %>" alt="">
+            <h6><%= element.place%></h6>
+            <h5><%= element.heading%></h5>
+            <p><%= element.desc%></p>
+            <span><%= element.rating%></span>
+        </div> 
+            <% }); %> 
+</div>
