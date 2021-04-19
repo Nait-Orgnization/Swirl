@@ -30,6 +30,7 @@ app.post('/addTip',websiteRoutes.addTip);
 app.get('/showTip/:id',websiteRoutes.editTip);
 app.delete('/deleteTip/:id',websiteRoutes.deleteTip);
 app.put('/updateTip/:id',websiteRoutes.updateTip);
+app.post('/favorite',websiteRoutes.favorite);
 
 app.listen(PORT, () => {
   console.log('app is running');

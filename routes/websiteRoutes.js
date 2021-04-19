@@ -5,7 +5,17 @@ const recommend = require('../data/recomend.json');
 let globalArray = [];
 
 const homePage = (req, res) => {
-  res.render('pages/index', { recommend: recommend });
+
+  
+
+  // res.render('pages/index', { data: 'working' });
+  let SQL =`SELECT * FROM places ;`;
+  client.query(SQL)
+    .then(result=>{
+      console.log(result.rows);
+      res.render('pages/index',{fav:result.rows, recommend: recommend});
+    });
+
 };
 
 //DATABASE
@@ -30,10 +40,14 @@ client.connect();
 const detailsPage = (req, res) => {
   globalArray = [];
   let city = req.body.city;
+
   let placeIdApiKey = process.env.placeIdApiKey;
 
   let placeIdUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${city}&key=${placeIdApiKey}&type=tourist_attraction`;
+
   globalArray.push(placeJsonData);
+
+
   // console.log(globalArray);
   // res.send(placeJsonData);
   // globalArray.push(placeJsonData);
@@ -55,18 +69,24 @@ const detailsPage = (req, res) => {
 const searchBook = city => {
   // let query = req.body.query;
   let bookURL = `https://www.googleapis.com/books/v1/volumes?q=intitle:${city}&maxResults=3`;
-
   return superagent.get(bookURL).then(result => {
-    let bookData = result.body.items;
-    let bookArr = bookData.map(item => {
-      return new constructors.Book(item);
-    });
-    // res.send(bookArr);// for testing
-    // res.render('pages/details',{renderBookData:bookArr} );
-    // globalArray.push(bookArr);
-    // return globalArray
-    // globalArray.push(bookArr);
-    return bookArr;
+    if(!result.body.items){
+      let fail=[{title:`Sorry There Is No Book Available About ${city}`,author:'',description:'',imgUrl:'https://i.postimg.cc/VvzSchbN/J5LVHEL.png'}];
+      return fail;
+    }
+    else{
+
+      let bookData = result.body.items;
+      let bookArr = bookData.map(item => {
+        return new constructors.Book(item);
+      });
+      // res.send(bookArr);// for testing
+      // res.render('pages/details',{renderBookData:bookArr} );
+      // globalArray.push(bookArr);
+      // return globalArray
+      // globalArray.push(bookArr);
+      return bookArr;
+    }
   });
 };
 
@@ -151,6 +171,21 @@ function updateTip(req, res) {
   });
 }
 
+
+function favorite (req,res){
+  let {placeName,Adress,photo,rating } = req.body;
+  // console.log(placeName);
+  let SQL='INSERT INTO places (placeName,place,Adress,photo,rating) VALUES ($1,$2,$3,$4,$5) RETURNING * ;';
+  let safeValues=[placeName,placeName,Adress,photo,rating];
+  // console.log(req.body);
+  client.query(SQL,safeValues).then(()=>res.redirect('/'))
+    .catch(()=>{
+      res.redirect('/');
+    });
+
+}
+
+
 module.exports = {
   homePage,
   detailsPage,
@@ -160,4 +195,5 @@ module.exports = {
   editTip,
   deleteTip,
   updateTip,
+  favorite,
 };

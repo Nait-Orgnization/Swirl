@@ -19,6 +19,13 @@
         <h4><%= element.Adress %> </h4>
         <p><%= element.rating %> </p>
         </div>  
+        <form action="/favorite" method="post">
+        <input type="hidden" name="photo" value="<%= element.photo %>">
+        <input type="hidden" name="placeName" value="<%= element.placeName %>">
+        <input type="hidden" name="Adress" value="<%= element.Adress %>">
+        <input type="hidden" name="rating" value="<%= element.rating %>">
+      <button> Add To Favorites </button>
+        </form>
  <%  }); %>
    
    </section>

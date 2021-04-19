@@ -25,6 +25,7 @@
       </div>
     </section>
 
+
     <section class="info--content">
       <div class="content--wrapper">
         <h2>By one click you can access more than you think </h2>
@@ -47,5 +48,17 @@
     <section class="cards--content">
       <%- include('../partials/recommend', {recommend : recommend})  %> 
     </section>
+
+
+    <section>
+<%fav.forEach(element => { %>
+  <div>
+    <p><%=element.place%></p>
+    <img src="<%=element.photo%>">
+  </div>
+    <%}); %>
+  </section>
+
+
   </body>
 </html>
