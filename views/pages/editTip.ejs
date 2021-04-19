@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>Edit Tip</h1>
+  
+  <main>
+  <section>
+      <div> 
+        <h2><%=edit.title %></h2>
+        <p><%=edit.description %></p>
+        </div>
+
+        <form action="/deleteTip/<%=edit.id%>?_method=delete" method="post">
+          <button>Delete Tip</button>
+      </form>
+
+      <button id='updateBtn'>Update</button>
+
+  </section>
+
+  <section id='updateForm'>
+    <form action="/updateTip/<%=edit.id%>?_method=put" method="post">
+     <input type="text" name="title" placeholder="Title"  value=' <%=edit.title  %> '>
+     <br>
+     <textarea name="description" placeholder="Description" cols="30" rows="10"><%=edit.description %></textarea>
+     <br>
+     <button type="submit">Update Tip</button>
+  </form>
+  </section>
+
+</main>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

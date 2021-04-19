@@ -7,6 +7,18 @@ const homePage = (req, res) => {
   res.render('pages/index', { data: 'working' });
 };
 
+
+//DATABASE
+const pg =require('pg');
+const client = new pg.Client( {
+  connectionString: process.env.DATABASE_URL,
+  // ssl: {
+  //   rejectUnauthorized : false
+  // }
+});
+client.connect();
+
+
 // function generalFunction(req, res)  {
 //   .then(item => {
 //     detailsPage(req, res);
@@ -95,8 +107,72 @@ function eventRenderHandler (city){
     });
 }
 
+
+
+function tipsHandler(req,res){
+  let SQL=`SELECT * FROM tips ;`;
+  client.query(SQL)
+    .then (tipsData=>{
+      // console.log(tipsData.rows);
+      // res.send(tipsData.rows);
+      res.render('pages/useful',{tips:tipsData.rows});
+    })
+    .catch(error=>{
+      console.log(error);
+    });
+}
+
+function addTip(req,res){
+  let {title,description}=req.body;
+  let SQL=`INSERT INTO tips (title,description)VALUES ($1,$2) RETURNING *;`;
+  let safeValues=[title,description];
+  client.query(SQL,safeValues)
+    .then(() =>{
+      // console.log(results.rows[0]);
+      // res.send(results.rows);
+      res.redirect(`/tips`);
+    });
+}
+
+function editTip(req,res){
+  // console.log(req.params);
+  let SQL=`SELECT * FROM tips WHERE id=$1;`;
+  let safeValues=[req.params.id];
+  // console.log(safeValues);
+  client.query(SQL,safeValues)
+    .then(results=>{
+      // res.send(results.rows[0]);
+      console.log(results.rows);
+      res.render('pages/editTip',{edit:results.rows[0]});
+    });
+}
+
+function deleteTip(req,res){
+  let SQL = `DELETE FROM tips WHERE id=$1;`;
+  let value = [req.params.id];
+  client.query(SQL,value)
+    .then(res.redirect('/tips'));
+}
+
+function updateTip(req,res){
+  let {title,description} = req.body;
+  let SQL = `UPDATE tips SET title=$1,description=$2 WHERE id=$3;`;
+  let safeValues = [title,description,req.params.id];
+  client.query(SQL,safeValues)
+    .then(()=>{
+      res.redirect(`/showTip/${req.params.id}`);
+    });
+}
+
+
+
 module.exports = {
   homePage,
   detailsPage,
   searchBook,
+  tipsHandler,
+  addTip,
+  editTip,
+  deleteTip,
+  updateTip,
 };
