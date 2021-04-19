@@ -40,3 +40,13 @@ VALUES ('Carry Spare Passport Photos', 'Obtaining visas for certain countries ca
 INSERT INTO tips (title,description)
 VALUES ('Pack Less Stuff In Your Backpack', 'You don’t need 1/2 the gear you think you do to travel anywhere. We’ve all done it. It’s a right of passage for travelers to slowly become better at packing less.');
 
+
+
+DROP TABLE IF EXISTS places;
+CREATE TABLE places (
+  placeName Text PRIMARY KEY,
+  place Text,
+  Adress Text,
+  photo Text,
+  rating DECIMAL(2,1)
+);

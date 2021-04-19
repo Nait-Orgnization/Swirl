@@ -24,5 +24,16 @@
         </div>
       </div>
     </section>
+
+
+    <section>
+<%fav.forEach(element => { %>
+  <div>
+    <p><%=element.place%></p>
+    <img src="<%=element.photo%>">
+  </div>
+    <%}); %>
+  </section>
+
   </body>
 </html>
