@@ -4,17 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Useful Tips</title>
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
 
 
-<h1>Useful Tips For Travelling</h1>
+<h1 class="tipsh1">Useful Tips For Travelling</h1>
 <div class="mainDiv">
+  
   <% tips.forEach(item=>{ %> 
-    <div>
-      <h2><%= item.title %></h2>
-      <p><%= item.description %></p>
+    <div class="card">
+      <h2 class="tipsh2"><%= item.title %></h2>
+      <p class="tipsp"><%= item.description %></p>
       <form action="/showTip/<%=item.id%>" method="GET">
         <input type="hidden" name="title" value="<%= item.title %>">
         <input type="hidden" name="description" value="<%= item.description %>">
@@ -23,7 +25,7 @@
       </div>
     <% })%>
   </div>
-<br>
+
 
   <button id='addBtn'>Add New Tip</button>
 
