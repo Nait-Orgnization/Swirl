@@ -5,14 +5,11 @@ const recommend = require('../data/recomend.json');
 let globalArray = [];
 
 const homePage = (req, res) => {
-
-  
-
   // res.render('pages/index', { data: 'working' });
   let SQL =`SELECT * FROM places ;`;
   client.query(SQL)
     .then(result=>{
-      console.log(result.rows);
+      // console.log("rrrrrrr",result.rows);
       res.render('pages/index',{fav:result.rows, recommend: recommend});
     });
 
@@ -175,9 +172,10 @@ function updateTip(req, res) {
 function favorite (req,res){
   let {placeName,Adress,photo,rating } = req.body;
   // console.log(placeName);
-  let SQL='INSERT INTO places (placeName,place,Adress,photo,rating) VALUES ($1,$2,$3,$4,$5) RETURNING * ;';
-  let safeValues=[placeName,placeName,Adress,photo,rating];
+  let SQL='INSERT INTO places (placeName,Adress,photo,rating) VALUES ($1,$2,$3,$4) RETURNING * ;';
+  let safeValues=[placeName,Adress,photo,rating];
   // console.log(req.body);
+  // console.log(safeValues);
   client.query(SQL,safeValues).then(()=>res.redirect('/'))
     .catch(()=>{
       res.redirect('/');
