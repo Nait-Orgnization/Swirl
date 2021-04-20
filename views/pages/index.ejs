@@ -50,11 +50,13 @@
     </section>
 
 
-    <section>
+    <section class = "favorite--ctr">
 <%fav.forEach(element => { %>
+
   <div>
     <p><%=element.placename%></p>
     <img src="<%=element.photo%>">
+
   </div>
     <%}); %>
   </section>

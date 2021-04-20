@@ -137,6 +137,8 @@
   grid-template-columns: repeat( auto-fit, minmax(188px, 1fr) );
   gap: 10px;
   grid-area: 2/2/2/3;
+  grid-template-rows: auto;
+  padding: 1.875rem 0rem
   
 }
 .cards--content{
@@ -144,7 +146,7 @@
   grid-template-columns: calc(((100 / 1360) * 100%)) calc(((1160 / 1360) * 100%)) calc(
     ((100 / 1360) * 100%)
   );
-  grid-template-rows: calc((40 / 654) * 100%) calc((614 / 654) * 100%);
+  grid-template-rows: auto;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   padding: 0em 1.875em;
@@ -171,4 +173,28 @@
 .recommend--ctr img{
   height: 240px;
   width: 100%;
+}
+
+/* Fifth section */
+.favorite--ctr{
+  display: grid;
+  grid-template-columns: calc(((100 / 1360) * 100%)) calc(((1160 / 1360) * 100%)) calc(
+    ((100 / 1360) * 100%)
+  );
+  grid-template-rows: calc((40 / 654) * 100%) calc((614 / 654) * 100%);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 0em 1.875em;
+}
+.favorite--content{
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(188px, 1fr) );
+  gap: 16px;
+  grid-area: 2/2/2/3;
+}
+
+.favorite--content img{
+height: 239px;
+border-radius: 12px;
+width: 100%;
 }
