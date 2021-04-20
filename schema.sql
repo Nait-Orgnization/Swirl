@@ -44,9 +44,9 @@ VALUES ('Pack Less Stuff In Your Backpack', 'You don’t need 1/2 the gear you t
 
 DROP TABLE IF EXISTS places;
 CREATE TABLE places (
-  placeName Text PRIMARY KEY,
-  place Text,
-  Adress Text,
+  id SERIAL PRIMARY KEY,
+  placename Text UNIQUE,
+  adress Text,
   photo Text,
   rating DECIMAL(2,1)
 );

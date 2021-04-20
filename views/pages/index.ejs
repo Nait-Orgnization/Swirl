@@ -52,11 +52,11 @@
 
     <section class = "favorite--ctr">
 <%fav.forEach(element => { %>
-  <div class = "favorite--content">
-    <div>
-      <img src="<%=element.photo%>">
-    <p><%=element.place%></p>
-  </div>
+
+  <div>
+    <p><%=element.placename%></p>
+    <img src="<%=element.photo%>">
+
   </div>
     <%}); %>
   </section>
