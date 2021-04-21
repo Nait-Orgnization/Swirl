@@ -5,26 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Edit Tip</title>
+    <link rel="stylesheet" href="/css/style.css">
+
   </head>
 
-<body>
-
-  <h1>Edit Tip</h1>
+<body class="editbody">
+  <section class="edit-header">
+  <%- include('../partials/header') %>
+  <div class="edit--center">
+    <h1>Edit Tip</h1>
+  </div>
+</section>
   
-  <main>
-    <section>
-
+  <main class="mainedit">
+    <div></div>
+    <div class="editmiddle">
+    <section class="editimg">
+<div class="editimg-content">
       <div> 
-        <h2><%=edit.title %></h2>
-        <p><%=edit.description %></p>
+        <h2 class="imgtitle"><%=edit.title %></h2>
+        <p class="imgp"><%=edit.description %></p>
       </div>
 
       <form action="/deleteTip/<%=edit.id%>?_method=delete" method="post">
-          <button>Delete Tip</button>
+          <button class="deletbtn">Delete Tip    <img src="/assets/delete.png" alt="hi"></button>
       </form>
 
       <button id='updateBtn'>Update</button>
-
+    </div>
     </section>
 
     <section id='updateForm'>
@@ -38,8 +46,61 @@
       </form>
 
     </section>
-
+  </div>
+<div></div>
   </main>
+  
+
+
+
+ <footer>
+    <div class="footer-upper">
+      <img class="footer-logo" src="/assets/footer-logo.svg" />
+      <h2 class="footer-h5">Seasoned. Nimble. Remote</h2>
+      <p>
+        We are a diverse and passionat team that takes owenship of changing the
+        world and empower people in different areas. we stay light on our feet and
+        tryly enjoy delivering great work.
+      </p>
+      <h5>Follow us on:</h5>
+      <div class="social--ctr">
+        <div class="social--card">
+          <div>
+            <img src="/assets/Facebook.svg" alt="" />
+          </div>
+          <span>Facebook</span>
+        </div>
+        <div class="social--card">
+          <div>
+            <img src="/assets/Instagram.svg" alt="" />
+          </div>
+          <span>Instgram</span>
+        </div>
+        <div class="social--card">
+          <div>
+            <img src="/assets/LinkedIN.svg" alt="" />
+          </div>
+          <span>LinkedIn</span>
+        </div>
+        <div class="social--card">
+          <div>
+            <img src="/assets/Pinterest.svg" alt="" />
+          </div>
+          <span>Pinterest</span>
+        </div>
+        <div class="social--card">
+          <div>
+            <img src="/assets/Slack.svg" alt="" />
+          </div>
+          <span>Slack</span>
+        </div>
+      </div>
+      <img class="victory--ctr" src="/assets/Victory.svg" />
+    </div>
+  </footer> 
+
+
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/js/app.js"></script>
 </body>

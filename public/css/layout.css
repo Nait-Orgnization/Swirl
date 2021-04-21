@@ -496,15 +496,18 @@ footer h2 {
   text-align: center;
 }
 .cards {
+  margin-top: 100px;
   display: grid;
-  grid-template-columns:
-    calc(((100 / 1360) * 100%)) calc(((1160 / 1360) * 100%))
-    calc(((100 / 1360) * 100%));
-  grid-template-rows: calc((75 / 654) * 100%) calc((579 / 654) * 100%);
+
+  grid-template-columns: calc(((100 / 1360) * 100%)) calc(((1160 / 1360) * 100%)) calc(
+      ((100 / 1360) * 100%)
+    );
+  grid-template-rows: auto;
+
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   padding: 0em 1.875em;
-  height: 100vh;
+  
 }
 
 .team--ctr {
@@ -540,12 +543,15 @@ footer h2 {
 }
 .name {
   text-align: center;
-  margin-top: 0px;
-  font-size: 22px;
-  /* font-family: 'Noticia Text', serif; */
-  /* font-family: 'Orelega One', cursive; */
-  font-family: 'Prata', serif;
-  font-weight: bold;
+
+margin-top: 0px;
+font-size: 22px;
+/* font-family: 'Noticia Text', serif; */
+/* font-family: 'Orelega One', cursive; */
+font-family: 'Prata', serif;
+font-weight: bold;
+color: #005B7E;
+
 }
 
 .jobTitle {
@@ -560,6 +566,7 @@ footer h2 {
   margin-top: 8px;
   font-size: 13px;
   font-family: 'Prata', serif;
+
 }
 
 .icon {

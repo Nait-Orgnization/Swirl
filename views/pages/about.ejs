@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
+
   <title>Document</title>
 </head>
 
@@ -15,11 +17,10 @@
     <div class="hero--content">
 
       <!-- <div class="our"> -->
-        <div class="content--text">
+        <div data-aos="fade-right" class="content--text"  data-aos-duration="1500">
 
             <!-- <div class="inner"> -->
               <h2 class="h3about">Our vision</h2>
-
               <p class="vision">
 
                 Swirl may have been born by a coincidence, but the harmony developed between us once we started working
@@ -31,7 +32,7 @@
                 we take care about your next destination, give you a useful information about best places and events will
                 be occurring in your destination.
               </p>
-        </div>
+            </div>
 
       </div>
 
@@ -40,7 +41,7 @@
   <section class="cards">
     <div class="team--ctr">
 
-      <div class="divshadow">
+      <div data-aos="fade-down" data-aos-duration="1000" class="divshadow" >
         <img class="imgabout" src="assets/ibrahim.PNG" alt="">
         <p class="procontainer">PRO</p>
         <h6 class="name">Ibrahim Banat </h6>
@@ -58,7 +59,7 @@
         </div>
       </div>
 
-      <div class="divshadow">
+      <div data-aos="fade-down" data-aos-duration="1000" class="divshadow">
         <img class="imgabout" src="assets/neveen.jpg" alt="">
         <p class="procontainer">PRO</p>
         <h6 class="name">Neveen Beiram</h6>
@@ -77,13 +78,12 @@
       </div>
 
 
-      <div class="divshadow">
+      <div data-aos="fade-down" data-aos-duration="1000" class="divshadow">
         <img class="imgabout" src="assets/tamara.jpg" alt="">
         <p class="procontainer">PRO</p>
         <h6 class="name">Tamara Albilleh </h6>
         <h6 class="jobTitle">Full Stack Web Developer</h6>
-        <h6 class="experience">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, necessitatibus
-          perspiciatis! Dolores totam necessitatibus vitae eligendi dolorem nemo</h6>
+        <h6 class="experience">A Registered Nurse graduated from university of Jordan recently, passionate about web development and determined to become a web developer</h6>
         <div class="icon">
           <a href="https://github.com/tamaraalbilleh" class="fab fa-github "></a>
           <a class="fab fa-instagram" href="#"></a>
@@ -94,7 +94,7 @@
 
         </div>
       </div>
-      <div class="divshadow">
+      <div data-aos="fade-up" data-aos-duration="1000" class="divshadow">
         <img class="imgabout" src="assets/Ayah.jpg" alt="">
         <p class="procontainer">PRO</p>
         <h6 class="name">Ayah Smadi</h6>
@@ -113,7 +113,7 @@
         </div>
       </div>
 
-      <div class="divshadow">
+      <div data-aos="fade-up" data-aos-duration="1000" class="divshadow">
         <img class="imgabout" src="assets/ashar.jpeg" alt="">
         <p class="procontainer">PRO</p>
         <h6 class="name">As-har Abuhelweh</h6>
@@ -133,7 +133,14 @@
 
     </div>
   </section>
+  <%- include('../partials/footer') %>
+
   <script src="https://kit.fontawesome.com/e516b72963.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
 
 </body>
 
