@@ -31,6 +31,7 @@ app.get('/showTip/:id',websiteRoutes.editTip);
 app.delete('/deleteTip/:id',websiteRoutes.deleteTip);
 app.put('/updateTip/:id',websiteRoutes.updateTip);
 app.post('/favorite',websiteRoutes.favorite);
+app.get('/about',websiteRoutes.aboutHandler);
 
 app.listen(PORT, () => {
   console.log('app is running');
