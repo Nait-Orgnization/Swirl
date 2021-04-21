@@ -35,3 +35,8 @@ nav a:active {
     rgba(255, 255, 255, 0.33)
   );
 }
+.recommend--ctr {
+  box-shadow: 0 0.6px 2.1px -15px rgb(0 0 0 / 9%),
+    0 2px 6.9px -15px rgb(0 0 0 / 13%), 0 9px 31px -15px rgb(0 0 0 / 21%);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}

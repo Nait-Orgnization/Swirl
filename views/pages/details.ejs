@@ -4,52 +4,85 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
-  <body> 
-    
-   <section>
-    
-    <% details[0].london.forEach(element => { %>
-      <div>
-        <img src="<%= element.photo %> " alt="">
-        <h2>
-          <%= element.placeName %> 
-        </h2>
-        <h4><%= element.Adress %> </h4>
-        <p><%= element.rating %> </p>
-        </div>  
-        <form action="/favorite" method="post">
-        <input type="hidden" name="photo" value="<%= element.photo %>">
-        <input type="hidden" name="placeName" value="<%= element.placeName %>">
-        <input type="hidden" name="Adress" value="<%= element.Adress %>">
-        <input type="hidden" name="rating" value="<%= element.rating %>">
-      <button> Add To Favorites </button>
-        </form>
- <%  }); %>
-   
-   </section>
-   <section>
-    <% details[1].forEach(book => {%>
-      <img src="<%= book.imgUrl %>" alt="">
-      <h2><%= book.title %></h2>
-      <h4><%= book.author %></h4>
-      <p><%= book.description %></p>
-   <% }) %> 
-   </section>
-   <section>
-     <%= console.log (details[2]) %> 
-          <% details[2].forEach(event => { %>
-            <section>
-                <h2><%= event.name %> </h2>
-                <h3><%= event.dateAndTime %> </h3>
-                <p>Timezone  : <%= event.timeZone %> </p>
-                <a href="<%= event.url  %> "> <img src="<%= event.image %> " alt="Event Image"></a>
-                <p>Event Id is : <%= event.id %> </p>
-                <p>Available Venues :  <a href="<%= event.venuesURL %>"><%= event.venues %></a> </p>
-            </section>
+  <body>
+    <section class="details--hero">
+      <%- include('../partials/header') %>
+      <!--  -->
+      <div class="places--grid">
+        <% details[0].london.forEach(element => { %>
+        <div class="places--card">
+          <div class="place--right">
+            <div class="mmm">
+              <div class="upper--m">
+                <h6 class="place-h-h6"><%= element.placeName %></h6>
+                <span class="place--star"><%= element.rating %></span>
+              </div>
+              <h6 class="place-d-h6"><%= element.Adress %></h6>
+              <form action="/favorite" method="post">
+                <input
+                  type="hidden"
+                  name="photo"
+                  value="<%= element.photo %>"
+                />
+                <input
+                  type="hidden"
+                  name="placeName"
+                  value="<%= element.placeName %>"
+                />
+                <input
+                  type="hidden"
+                  name="Adress"
+                  value="<%= element.Adress %>"
+                />
+                <input
+                  type="hidden"
+                  name="rating"
+                  value="<%= element.rating %>"
+                />
+                <button class="fav--button"><i class="far fa-star"></i></button>
+              </form>
+            </div>
+          </div>
+          <div><img src="<%= element.photo %> " alt="" /></div>
+        </div>
+
         <% }); %>
-       
-   </section>
+      </div>
+    </section>
+    <section class="books--section">
+      <div class="book--ctr">
+        <% details[1].forEach(book => {%>
+        <div>
+          <img src="<%= book.imgUrl %>" alt="" />
+          <h2><%= book.title %></h2>
+          <h4><%= book.author %></h4>
+        </div>
+        <% }) %>
+      </div>
+    </section>
+    <section>
+      <%= console.log (details[2]) %> <% details[2].forEach(event => { %>
+      <section>
+        <h2><%= event.name %></h2>
+        <h3><%= event.dateAndTime %></h3>
+        <p>Timezone : <%= event.timeZone %></p>
+        <a href="<%= event.url  %> ">
+          <img src="<%= event.image %> " alt="Event Image"
+        /></a>
+        <p>Event Id is : <%= event.id %></p>
+        <p>
+          Available Venues :
+          <a href="<%= event.venuesURL %>"><%= event.venues %></a>
+        </p>
+      </section>
+      <% }); %>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/fb27425b9e.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

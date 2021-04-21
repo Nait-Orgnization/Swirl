@@ -1,0 +1,24 @@
+.fav--button:hover {
+  animation: 500ms rot backwards;
+  transition: all 100ms ease;
+}
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(40deg);
+  }
+  40% {
+    transform: rotate(80deg);
+  }
+  60% {
+    transform: rotate(120deg);
+  }
+  80% {
+    transform: rotate(160deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
