@@ -13,8 +13,10 @@ all to yourself while avoiding large tourist crowds.
  and it’s usually easier to interact with locals getting ready for their day.');
 
 INSERT INTO tips (title,description)
-VALUES ('Observe Daily Life Around You', 'If you really want to get a feel for the pulse of a place, one of my favorite travel tips is to spend a few hours sitting in a park or on a busy street corner by yourself just watching day to day life happen in front of you.
-Slow down your train of thought and pay close attention to the details around you. The smells, the colors, human interactions, and sounds. It’s a kind of meditation — and you’ll see stuff you never noticed before.');
+VALUES ('Observe Daily Life Around You', 'If you really want to get a feel for the pulse of 
+a place, one of my favorite travel tips is to spend a few hours
+ sitting in a park or on a busy street corner by yourself just
+  watching day to day life happen in front of you.');
 
 INSERT INTO tips (title,description)
 VALUES ('Slow Down To Enjoy Your Trip', 'Please don’t try to cram 6 countries into 6 weeks of travel. All the good stuff happens when you really take the time to explore. You’ll learn about activities that aren’t in your guidebook and meet people who are eager to show you around.');
