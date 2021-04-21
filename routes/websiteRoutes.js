@@ -184,6 +184,10 @@ function favorite (req,res){
 
 }
 
+function aboutHandler(req,res){
+  res.render('pages/about');
+}
+
 
 module.exports = {
   homePage,
@@ -195,5 +199,6 @@ module.exports = {
   deleteTip,
   updateTip,
   favorite,
+  aboutHandler,
 
 };
