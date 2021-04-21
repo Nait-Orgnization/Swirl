@@ -118,12 +118,13 @@ function eventRenderHandler(city) {
 
 function tipsHandler(req, res) {
   let SQL = `SELECT * FROM tips ;`;
+  let imgArray = ['./assets/a1.jpg','./assets/a2.jpg'];
   client
     .query(SQL)
     .then(tipsData => {
       // console.log(tipsData.rows);
       // res.send(tipsData.rows);
-      res.render('pages/useful', { tips: tipsData.rows });
+      res.render('pages/useful', { tips: tipsData.rows , imgs: imgArray });
     })
     .catch(error => {
       console.log(error);
@@ -199,4 +200,5 @@ module.exports = {
   updateTip,
   favorite,
   aboutHandler,
+
 };

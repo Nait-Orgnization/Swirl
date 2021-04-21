@@ -6,3 +6,173 @@ nav {
   color: white;
 }
 
+/* tips */
+
+.headerheader {
+   width:80%;
+  margin: auto;
+  height:68px; 
+  margin-bottom: 40px;
+ 
+}
+
+.mainSec {
+  display: grid;
+}
+
+.useful--hero {
+  display: grid;
+  text-align: center;
+  grid-template-columns: calc(((100 / 1360) * 100%)) calc(((1160 / 1360) * 100%)) calc(
+    ((100 / 1360) * 100%)
+  );
+  grid-template-rows: calc((75 / 654) * 100%) calc((579 / 654) * 100%);
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1610958907654-be06a64dc75b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.use--h-ctr {
+  grid-area: 2/2/2/3;
+  padding: 1.875em;
+  color: white;
+}
+.tipsh1 {
+  text-shadow: 2px 1px 6px rgba(0,0,0,0.55);
+  margin-top: 3.75em;
+  
+}
+
+.tips--section {
+  margin-top:  2.5em;
+  display: grid;
+  grid-template-columns: calc(((100 / 1360) * 100%)) calc(((1160 / 1360) * 100%)) calc(
+    ((100 / 1360) * 100%)
+  );
+  grid-template-rows: auto;
+
+}
+.tips-body {
+  grid-area: 2/2/2/3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(377px, 1fr));
+  gap: 15px;
+  
+}
+.card-img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 2px #F1F3F6 solid;
+  margin-right:  1.25em;
+}
+.card {
+  border: 2px  #E5E5E5 solid;
+  border-radius: 30px;
+  padding: 2.5em;
+
+box-shadow:
+  0 0.6px 2.1px -15px rgba(0, 0, 0, 0.085),
+  0 2px 6.9px -15px rgba(0, 0, 0, 0.125),
+  0 9px 31px -15px rgba(0, 0, 0, 0.21)
+;
+
+
+}
+.tipsh2 {
+  margin: 0;
+  font-size:   1.5em;
+}
+.user {
+  display: flex;
+
+margin-bottom:  0.625em;
+  align-items: center;
+}
+.tipsh3 {
+  
+  font-size:   1.25em;
+  margin: 0;
+  color :#22215B;
+
+}
+.newTip {
+  border: 2px  #E5E5E5 solid;
+  border-radius: 30px;
+  padding: 2.5em;
+  box-shadow: 
+  0 0.6px 2.1px -15px rgba(0, 0, 0, 0.085),
+  0 2px 6.9px -15px rgba(0, 0, 0, 0.125),
+  0 9px 31px -15px rgba(0, 0, 0, 0.21)
+  ;
+  text-align: center;
+
+
+}
+
+.newTip #addBtn {
+  height: 3.125em;
+  width: 3.125em;
+  border-radius:50% ;
+  border: none;
+  background-color: #22215B;
+  color: white;
+  line-height:3.125em ;
+  font-size: 1.625em;
+  margin-top:  2.5em;
+  
+
+
+}
+.tipsh4 {
+  font-size: 1.625em;
+}
+
+#addNewTip {
+  text-align: center;
+}
+
+#addNewTip input, #addNewTip textarea {
+  background-color: white;
+  color :#2C2C2C;
+  width: 70%;
+  padding: 1.25em;
+  margin-bottom:0.625em ;
+  border-radius: 4px;
+  border: 1px solid #E0E0E0;
+
+}
+
+#addNewTip button {
+ 
+  border: none;
+  border-radius: 4px;
+  background-color: #22215B;
+  color: white;
+  width:  8.125em;
+  height:  3.125em;
+  font-size: 0.875em;
+  
+
+}
+
+.tipsp {
+  margin-top: 1.25em;
+  max-width: 90%;
+  margin-left: 1.25em;
+}
+
+.edittipbutton {
+  border: none;
+  border-radius: 4px;
+  background-color: #22215B;
+  color: white;
+  width:  8.125em;
+  height:  3.125em;
+  font-size: 0.875em;
+  float: right;
+  margin-top:  2.5em;
+}
+
+/* edit tips */
