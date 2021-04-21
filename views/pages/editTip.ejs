@@ -10,12 +10,13 @@
   </head>
 
 <body class="editbody">
-  <section class="edit-header">
-  <%- include('../partials/header') %>
+  
+ 
   <div class="edit--center">
-    <h1>Edit Tip</h1>
+ <a href="/tips"><img src="/assets/arrow.svg" alt="" ></a>
+ <a href="/tips">  Back to Tips page</a>
   </div>
-</section>
+
   
   <main class="mainedit">
     <div></div>
@@ -31,15 +32,18 @@
           <button class="deletbtn">Delete Tip    <img src="/assets/delete.png" alt="hi"></button>
       </form>
 
-      <button id='updateBtn'>Update</button>
+      <button id='updateBtn' class="deletbtn">Update</button>
     </div>
     </section>
 
-    <section id='updateForm'>
+    <section id='updateForm' >
 
-      <form action="/updateTip/<%=edit.id%>?_method=put" method="post">
+      <form action="/updateTip/<%=edit.id%>?_method=put" method="post" class="editform">
+        <h2>Edit Your Entry</h2>
+        <label for="title">Title</label>
         <input type="text" name="title" placeholder="Title"  value=' <%=edit.title  %> '>
         <br>
+        <label for="description">Details</label>
         <textarea name="description" placeholder="Description" cols="30" rows="10"><%=edit.description %></textarea>
         <br>
         <button type="submit">Update Tip</button>
@@ -51,53 +55,6 @@
   </main>
   
 
-
-
- <footer>
-    <div class="footer-upper">
-      <img class="footer-logo" src="/assets/footer-logo.svg" />
-      <h2 class="footer-h5">Seasoned. Nimble. Remote</h2>
-      <p>
-        We are a diverse and passionat team that takes owenship of changing the
-        world and empower people in different areas. we stay light on our feet and
-        tryly enjoy delivering great work.
-      </p>
-      <h5>Follow us on:</h5>
-      <div class="social--ctr">
-        <div class="social--card">
-          <div>
-            <img src="/assets/Facebook.svg" alt="" />
-          </div>
-          <span>Facebook</span>
-        </div>
-        <div class="social--card">
-          <div>
-            <img src="/assets/Instagram.svg" alt="" />
-          </div>
-          <span>Instgram</span>
-        </div>
-        <div class="social--card">
-          <div>
-            <img src="/assets/LinkedIN.svg" alt="" />
-          </div>
-          <span>LinkedIn</span>
-        </div>
-        <div class="social--card">
-          <div>
-            <img src="/assets/Pinterest.svg" alt="" />
-          </div>
-          <span>Pinterest</span>
-        </div>
-        <div class="social--card">
-          <div>
-            <img src="/assets/Slack.svg" alt="" />
-          </div>
-          <span>Slack</span>
-        </div>
-      </div>
-      <img class="victory--ctr" src="/assets/Victory.svg" />
-    </div>
-  </footer> 
 
 
 
