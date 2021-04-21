@@ -224,11 +224,11 @@ margin-bottom:  0.625em;
    calc(((200 / 1360) * 100%)) calc(((960 / 1360) * 100%))
    calc(((200 / 1360) * 100%));
    /* width: 6.25em; */
-   box-shadow:
+   /* box-shadow:
   0 0.6px 2.1px -15px rgba(0, 0, 0, 0.085),
   0 2px 6.9px -15px rgba(0, 0, 0, 0.125),
   0 9px 31px -15px rgba(0, 0, 0, 0.21)
-;
+; */
    
 }
 .editimg{
@@ -237,20 +237,38 @@ margin-bottom:  0.625em;
   background-position: center;
   background-repeat: no-repeat;
   background-size:cover;
-text-align: center;
-
-/* float: right; */
+  text-align: center;
+/* border-radius: 16px; */
+border-top-left-radius: 15px;
+border-bottom-left-radius: 15px;
 padding: 3.125em;
+box-shadow:
+  0 4.5px 16px rgba(0, 0, 0, 0.044),
+  0 15px 53.8px rgba(0, 0, 0, 0.066),
+  0 67px 241px rgba(0, 0, 0, 0.11)
+;
+
 
 }
 .editmiddle {
 display: grid;
-grid-template-columns: 40% 60%
-}
-#updateForm {
-  background-color: white
+grid-template-columns: 40% 60%;
 
 }
+#updateForm {
+  background-color: #EFFBFF;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow:
+  0 4.5px 16px rgba(0, 0, 0, 0.044),
+  0 15px 53.8px rgba(0, 0, 0, 0.066),
+  0 67px 241px rgba(0, 0, 0, 0.11)
+;
+
+}
+
 .editimg-content {
   margin-top: 50%;
 
@@ -260,6 +278,7 @@ color: white;
 font-size: 1.625em;
 text-shadow: 0 0 10px #FFFFFF, 2px 5px 5px rgba(0,0,0,0);
 }
+
 .imgp{
   color: #EFFBFF;
   font-size: 1.25em;
@@ -273,4 +292,67 @@ padding: 1.25em;
 height: 4.375em;
 line-height: 2.5em;
 vertical-align: middle;
+margin : 1.25em;
+width: 12.5em;
+}
+.editform {
+  margin-top: 0.25em;
+ text-align: center;
+display : inline-block;
+margin-left :auto;
+margin-right : auto;
+text-align :left ;
+
+}
+.editform label , .editform textarea , .editform input ,.editform button {
+  display: block;
+}
+.editform textarea , .editform input  {
+  width: 100%;
+  padding: 1.25em;
+  color: #2c2c2cd3;
+  border: 1px solid rgba(131, 131, 131, 0.5)
+ 
+
+
+}
+.editform textarea:focus , .editform input:focus  {
+  outline: none;
+}
+
+
+.editform h2 {
+  color: rgba(0,0,0,.6);
+  text-shadow: 1px 2px 3px#005B7E;
+}
+.editform label {
+  color: #005B7E;
+}
+.editform button {
+  border: none;
+  border-radius: 4px;
+  background-color: #005B7E;
+  color: white;
+  width:  8.125em;
+  height:  3.125em;
+  font-size: 0.875em;
+  text-align: center;
+margin-left: 30%;
+}
+.editform button:hover, .deletbtn:hover , .editform button:focus, .deletbtn:focus{
+ 
+outline: none;
+  box-shadow: 0 0.75em 0.5em -0.4em  #bde8ff;
+  transform: translateY(-0.25em);
+
+}
+  
+.edit--center img {
+  height:40px ;
+  width: 40px;
+  margin-left:50px;
+  margin-top:20px;
+}
+.edit--center a {
+  vertical-align: middle;
 }
