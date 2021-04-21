@@ -10,76 +10,113 @@
   <body>
     <section class="details--hero">
       <%- include('../partials/header') %>
-      <!--  -->
-      <div class="places--grid">
-        <% details[0].london.forEach(element => { %>
-        <div class="places--card">
-          <div class="place--right">
-            <div class="mmm">
-              <div class="upper--m">
-                <h6 class="place-h-h6"><%= element.placeName %></h6>
-                <span class="place--star"><%= element.rating %></span>
+
+      <div class="place--wrapper">
+        <h2>Place Details</h2>
+        <p class="place-p">
+          here are some famous places in your destination, you can star the
+          place and make it popular!
+        </p>
+        <div class="places--grid">
+          <% details[0].london.forEach(element => { %>
+          <div class="places--card">
+            <div class="place--right divider">
+              <div class="mmm">
+                <div class="upper--m">
+                  <h6 class="place-h-h6"><%= element.placeName %></h6>
+                  <span class="place--star"
+                    ><i class="fas fa-star" aria-hidden="true"></i><%=
+                    element.rating %></span
+                  >
+                </div>
+                <h6 class="place-d-h6"><%= element.Adress %></h6>
+                <form action="/favorite" method="post">
+                  <input
+                    type="hidden"
+                    name="photo"
+                    value="<%= element.photo %>"
+                  />
+                  <input
+                    type="hidden"
+                    name="placeName"
+                    value="<%= element.placeName %>"
+                  />
+                  <input
+                    type="hidden"
+                    name="Adress"
+                    value="<%= element.Adress %>"
+                  />
+                  <input
+                    type="hidden"
+                    name="rating"
+                    value="<%= element.rating %>"
+                  />
+                  <button class="fav--button">
+                    <i class="far fa-star"></i>
+                  </button>
+                </form>
               </div>
-              <h6 class="place-d-h6"><%= element.Adress %></h6>
-              <form action="/favorite" method="post">
-                <input
-                  type="hidden"
-                  name="photo"
-                  value="<%= element.photo %>"
-                />
-                <input
-                  type="hidden"
-                  name="placeName"
-                  value="<%= element.placeName %>"
-                />
-                <input
-                  type="hidden"
-                  name="Adress"
-                  value="<%= element.Adress %>"
-                />
-                <input
-                  type="hidden"
-                  name="rating"
-                  value="<%= element.rating %>"
-                />
-                <button class="fav--button"><i class="far fa-star"></i></button>
-              </form>
+            </div>
+            <div class="divider">
+              <img src="<%= element.photo %> " alt="" />
             </div>
           </div>
-          <div><img src="<%= element.photo %> " alt="" /></div>
-        </div>
 
-        <% }); %>
+          <% }); %>
+        </div>
       </div>
     </section>
     <section class="books--section">
+      <div class="book-de">
+        <h2>Books about your destination</h2>
+        <p>
+          here are a collection of books provided to you to read about your
+          destination.
+        </p>
+      </div>
       <div class="book--ctr">
         <% details[1].forEach(book => {%>
-        <div>
+        <div class="book--card">
           <img src="<%= book.imgUrl %>" alt="" />
-          <h2><%= book.title %></h2>
-          <h4><%= book.author %></h4>
+
+          <div class="book--down-ctr">
+            <h5><%= book.title %></h5>
+          </div>
         </div>
         <% }) %>
       </div>
     </section>
-    <section>
-      <%= console.log (details[2]) %> <% details[2].forEach(event => { %>
-      <section>
-        <h2><%= event.name %></h2>
-        <h3><%= event.dateAndTime %></h3>
-        <p>Timezone : <%= event.timeZone %></p>
-        <a href="<%= event.url  %> ">
-          <img src="<%= event.image %> " alt="Event Image"
-        /></a>
-        <p>Event Id is : <%= event.id %></p>
+    <section class="event--section">
+      <div class="events--intro">
+        <h2>Upcoming events</h2>
         <p>
-          Available Venues :
-          <a href="<%= event.venuesURL %>"><%= event.venues %></a>
+          Your go-to place for everything “happening”. From cultural and
+          entertainment events to sports, business and more
         </p>
-      </section>
-      <% }); %>
+      </div>
+      <div class="events--ctr">
+        <%= console.log (details[2]) %> <% details[2].forEach(event => { %>
+        <section class="event">
+          <div>
+            <div class="ticket">
+              <a href="<%= event.venuesURL %>"
+                ><img src="assets/reserve.svg" alt=""
+              /></a>
+            </div>
+            <h5><%= event.name %></h5>
+            <span><%= event.dateAndTime %></span>
+          </div>
+
+          <img
+            class="ev-hero-img"
+            src="<%= event.image %> "
+            alt="Event Image"
+          />
+        </section>
+        <% }); %>
+      </div>
     </section>
+    <%- include('../partials/footer') %>
     <script
       src="https://kit.fontawesome.com/fb27425b9e.js"
       crossorigin="anonymous"

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Useful Tips</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
   </head>
 
@@ -14,13 +15,15 @@
   <section class="useful--hero">
     <%- include('../partials/header') %>
     <div class="use--h-ctr">
-      <h1 class="tipsh1">Useful Tips For Travelling</h1>
+      <h1 class="tipsh1" data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1000">Useful Tips For Travelling</h1>
     </div>
   </section>
   <section class="tips--section">
     <div class="tips-body">
 
-<div class="newTip">
+<div class="newTip" data-aos="zoom-in-up">
   <h4 class="tipsh4" >Share Your Travelling Tips With Us</h4>
         <button id='addBtn'>+</button>
   
@@ -36,7 +39,7 @@
     </div>   
           <!-- <div class="mainDiv"> -->
             <% tips.forEach(item=>{ %> 
-              <div class="card">
+              <div class="card" data-aos="zoom-in-up">
                 <div class="user">
                   <img  class="card-img" src="/assets/Profile-Image.png" alt="">
 <div>
@@ -64,9 +67,14 @@
   
   
 
+  <%- include('../partials/footer') %>
 
 
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/js/app.js"></script>
 </body>
