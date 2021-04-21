@@ -6,13 +6,11 @@ let globalArray = [];
 
 const homePage = (req, res) => {
   // res.render('pages/index', { data: 'working' });
-  let SQL =`SELECT * FROM places ;`;
-  client.query(SQL)
-    .then(result=>{
-      // console.log("rrrrrrr",result.rows);
-      res.render('pages/index',{fav:result.rows, recommend: recommend});
-    });
-
+  let SQL = `SELECT * FROM places ;`;
+  client.query(SQL).then(result => {
+    // console.log("rrrrrrr",result.rows);
+    res.render('pages/index', { fav: result.rows, recommend: recommend });
+  });
 };
 
 //DATABASE
@@ -44,7 +42,6 @@ const detailsPage = (req, res) => {
 
   globalArray.push(placeJsonData);
 
-
   // console.log(globalArray);
   // res.send(placeJsonData);
   // globalArray.push(placeJsonData);
@@ -65,14 +62,19 @@ const detailsPage = (req, res) => {
 
 const searchBook = city => {
   // let query = req.body.query;
-  let bookURL = `https://www.googleapis.com/books/v1/volumes?q=intitle:${city}&maxResults=3`;
+  let bookURL = `https://www.googleapis.com/books/v1/volumes?q=intitle:${city}&maxResults=6`;
   return superagent.get(bookURL).then(result => {
-    if(!result.body.items){
-      let fail=[{title:`Sorry There Is No Book Available About ${city}`,author:'',description:'',imgUrl:'https://i.postimg.cc/VvzSchbN/J5LVHEL.png'}];
+    if (!result.body.items) {
+      let fail = [
+        {
+          title: `Sorry There Is No Book Available About ${city}`,
+          author: '',
+          description: '',
+          imgUrl: 'https://i.postimg.cc/VvzSchbN/J5LVHEL.png',
+        },
+      ];
       return fail;
-    }
-    else{
-
+    } else {
       let bookData = result.body.items;
       let bookArr = bookData.map(item => {
         return new constructors.Book(item);
@@ -93,8 +95,20 @@ function eventRenderHandler(city) {
 
   return superagent.get(url).then(eventData => {
     if (!eventData.body._embedded) {
-      let ev = [{name :'Sorry ,No Events Available' , url :'Sorry ,No Events Available',id : 'no id available',image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',dateAndTime: 'none - available',timeZone:'unknown',venues: 'no venues available',venuesURL:'no url available'} ];
-      ev.length =1;
+      let ev = [
+        {
+          name: 'Sorry ,No Events Available',
+          url: 'Sorry ,No Events Available',
+          id: 'no id available',
+          image:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
+          dateAndTime: 'none - available',
+          timeZone: 'unknown',
+          venues: 'no venues available',
+          venuesURL: 'no url available',
+        },
+      ];
+      ev.length = 1;
       return ev;
     } else {
       let eData = eventData.body._embedded.events;
@@ -169,24 +183,27 @@ function updateTip(req, res) {
   });
 }
 
-
-function favorite (req,res){
-  let {placeName,Adress,photo,rating } = req.body;
+function favorite(req, res) {
+  let { placeName, Adress, photo, rating } = req.body;
   // console.log(placeName);
-  let SQL='INSERT INTO places (placeName,Adress,photo,rating) VALUES ($1,$2,$3,$4) RETURNING * ;';
-  let safeValues=[placeName,Adress,photo,rating];
+  let SQL =
+    'INSERT INTO places (placeName,Adress,photo,rating) VALUES ($1,$2,$3,$4) RETURNING * ;';
+  let safeValues = [placeName, Adress, photo, rating];
   // console.log(req.body);
   // console.log(safeValues);
-  client.query(SQL,safeValues).then(()=>res.redirect('/'))
-    .catch(()=>{
+  client
+    .query(SQL, safeValues)
+    .then(() => res.redirect('/'))
+    .catch(() => {
       res.redirect('/');
     });
-
 }
+
 
 function aboutHandler(req,res){
   res.render('pages/about');
 }
+
 
 
 module.exports = {

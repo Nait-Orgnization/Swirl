@@ -1,46 +1,46 @@
 {
-    "recommend": [
-        {
-            "img": "https://images.pexels.com/photos/3070989/pexels-photo-3070989.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            "place": "URGUAY",
-            "heading": "2 Nights PACKAGE All Inclusive",
-            "desc": "lorem ipusm $5 hight saidfrtkvwk",
-            "rating": "4.5"
-        },
-        {
-            "img": "https://images.pexels.com/photos/919278/pexels-photo-919278.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-            "place": "URGUAY",
-            "heading": "2 Nights PACKAGE All Inclusive",
-            "desc": "lorem ipusm $5 hight saidfrtkvwk",
-            "rating": "4.5"
-        },
-        {
-            "img": "https://images.pexels.com/photos/4338170/pexels-photo-4338170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-            "place": "URGUAY",
-            "heading": "2 Nights PACKAGE All Inclusive",
-            "desc": "lorem ipusm $5 hight saidfrtkvwk",
-            "rating": "4.5"
-        },
-        {
-            "img": "https://images.pexels.com/photos/2104044/pexels-photo-2104044.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            "place": "URGUAY",
-            "heading": "2 Nights PACKAGE All Inclusive",
-            "desc": "lorem ipusm $5 hight saidfrtkvwk",
-            "rating": "4.5"
-        },
-        {
-            "img": "https://images.pexels.com/photos/3584283/pexels-photo-3584283.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            "place": "URGUAY",
-            "heading": "2 Nights PACKAGE All Inclusive",
-            "desc": "lorem ipusm $5 hight saidfrtkvwk",
-            "rating": "4.5"
-        },
-        {
-            "img": "https://images.pexels.com/photos/1837590/pexels-photo-1837590.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            "place": "URGUAY",
-            "heading": "2 Nights PACKAGE All Inclusive",
-            "desc": "lorem ipusm $5 hight saidfrtkvwk",
-            "rating": "4.5"
-        }
-    ]
+  "recommend": [
+    {
+      "img": "https://images.pexels.com/photos/1603650/pexels-photo-1603650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "place": "INDIA",
+      "heading": "Taj Mahal",
+
+      "rating": "4.8"
+    },
+    {
+      "img": "https://images.pexels.com/photos/1797161/pexels-photo-1797161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "place": "ITALY",
+      "heading": "Colosseum",
+
+      "rating": "4.4"
+    },
+    {
+      "img": "https://images.pexels.com/photos/3648370/pexels-photo-3648370.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "place": "BRAZIL",
+      "heading": "Christ the Redeemer",
+
+      "rating": "4.4"
+    },
+    {
+      "img": "https://images.pexels.com/photos/7053902/pexels-photo-7053902.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "place": "MEXICO",
+      "heading": "Chichen Itza",
+
+      "rating": "4.3"
+    },
+    {
+      "img": "https://images.pexels.com/photos/3214958/pexels-photo-3214958.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "place": "JORDAN",
+      "heading": "Petra",
+
+      "rating": "4.9"
+    },
+    {
+      "img": "https://images.pexels.com/photos/7566890/pexels-photo-7566890.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "place": "EGYPT",
+      "heading": "Egypt Pyramids",
+
+      "rating": "4.7"
+    }
+  ]
 }
