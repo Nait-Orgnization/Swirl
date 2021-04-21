@@ -17,9 +17,9 @@ const homePage = (req, res) => {
 const pg = require('pg');
 const client = new pg.Client({
   connectionString: process.env.DATABASE_URL,
-  // ssl: {
-  //   rejectUnauthorized: false,
-  // },
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 client.connect();
 
@@ -132,13 +132,13 @@ function eventRenderHandler(city) {
 
 function tipsHandler(req, res) {
   let SQL = `SELECT * FROM tips ;`;
-  let imgArray = ['./assets/a1.jpg','./assets/a2.jpg'];
+  let imgArray = ['./assets/a1.jpg', './assets/a2.jpg'];
   client
     .query(SQL)
     .then(tipsData => {
       // console.log(tipsData.rows);
       // res.send(tipsData.rows);
-      res.render('pages/useful', { tips: tipsData.rows , imgs: imgArray });
+      res.render('pages/useful', { tips: tipsData.rows, imgs: imgArray });
     })
     .catch(error => {
       console.log(error);
@@ -199,12 +199,9 @@ function favorite(req, res) {
     });
 }
 
-
-function aboutHandler(req,res){
+function aboutHandler(req, res) {
   res.render('pages/about');
 }
-
-
 
 module.exports = {
   homePage,
@@ -217,5 +214,4 @@ module.exports = {
   updateTip,
   favorite,
   aboutHandler,
-
 };
