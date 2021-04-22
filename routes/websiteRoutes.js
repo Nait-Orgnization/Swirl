@@ -17,9 +17,9 @@ const homePage = (req, res) => {
 const pg = require('pg');
 const client = new pg.Client({
   connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  // ssl: {
+  //   rejectUnauthorized: false,
+  // },
 });
 client.connect();
 
@@ -42,11 +42,25 @@ const detailsPage = (req, res) => {
 
   globalArray.push(placeJsonData);
 
-  // console.log(globalArray);
-  // res.send(placeJsonData);
-  // globalArray.push(placeJsonData);
-  // searchBook(city).then(result =>{
-  //   res.send(result);
+  // superagent.get(placeIdUrl).then(data => {
+  //   for (let index = 0; index < 3; index++) {
+  //     let obj = data.body.results[index];
+  //     let name = obj.name;
+  //     let address = obj.formatted_address;
+  //     let rating = obj.rating;
+  //     let photoRef = obj.photos[0].photo_reference;
+
+  //     //   console.log({
+  //     //     adress: obj.formatted_address,
+  //     //     name: obj.name,
+  //     //     photo: obj.photos[0].photo_reference,
+  //     //     rating: obj.rating,
+  //     //   });
+  //     //   let url = `https://maps.googleapis.com/maps/api/place/photo?&photoreference=${photo}&key=${placeIdApiKey}`;
+  //     let photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoRef}&key=${placeIdApiKey}`;
+  //     let place = new constructors.Place(name, address, photoUrl, rating);
+  //   }
+  //   res.render('pages/details', { placesArray: constructors.placesArray });
   // });
   let bookfunction = searchBook(city);
   bookfunction.then(arr => {

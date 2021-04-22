@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300&display=swap');
+
+/* headers */
+h1,
+h2 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
 /* header */
 nav {
   color: rgba(255, 255, 255, 0.5);
@@ -19,24 +30,64 @@ nav a:active {
   background: inherit;
 }
 .form {
-  background: rgba(255, 255, 255, 0.15);
+  /* background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   background: linear-gradient(
     to right bottom,
     rgba(255, 255, 255, 0.4),
     rgba(255, 255, 255, 0.3)
   );
-  color: #001829;
+  color: #001829; */
 }
 .form:hover {
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right bottom,
     rgba(255, 255, 255, 0.43),
     rgba(255, 255, 255, 0.33)
-  );
+  ); */
 }
 .recommend--ctr {
   box-shadow: 0 0.6px 2.1px -15px rgb(0 0 0 / 9%),
     0 2px 6.9px -15px rgb(0 0 0 / 13%), 0 9px 31px -15px rgb(0 0 0 / 21%);
   border: 1px solid rgba(0, 0, 0, 0.07);
+}
+.content--wrapper h2,
+.more--wrapper h2,
+.cards--content h2,
+h5,
+.favorite--ctr h2 {
+  color: #2f4858;
+}
+h4,
+h5 {
+  font-family: 'Averia Serif Libre', cursive;
+}
+nav {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+p {
+  font-family: 'Averia Serif Libre', cursive;
+}
+.logo span {
+  font-family: 'Indie Flower', cursive;
+}
+.procontainer {
+  color: #fff;
+  background: #d71731;
+}
+.name {
+  color: #2f4858;
+}
+.jobTitle {
+  color: #333;
+}
+.icon a {
+  color: #d71731;
+}
+.content--text h3 {
+  color: #fff;
+}
+.rec--ctr p {
+  color: #d71731;
 }
