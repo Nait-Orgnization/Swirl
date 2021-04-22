@@ -1,6 +1,5 @@
 /* home page */
 /* hero section */
-
 /* details page */
 /* places section */
 @media screen and (max-width: 500px) {
@@ -15,7 +14,6 @@
   .useful--hero {
     grid-template-rows: calc((100 / 654) * 100%);
   }
-
   .tips-body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
