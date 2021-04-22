@@ -5,10 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Useful Tips</title>
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+
   </head>
 
+  <body>
+    <section class="useful--hero">
+      <%- include('../partials/header') %>
+      <div class="use--h-ctr">
+        <h1 class="tipsh1">Useful Tips For Travelling</h1>
+      </div>
+    </section>
+    <section class="tips--section">
+      <div class="tips-body">
+        <div class="newTip">
+          <h4 class="tipsh4">Share Your Travelling Tips With Us</h4>
+          <button id="addBtn">+</button>
+
+          <section id="addNewTip">
+            <form action="/addTip" method="post">
+              <input type="text" name="title" placeholder="Title" />
+              <br />
+              <textarea
+                name="description"
+                placeholder="Description"
+                cols="30"
+                rows="10"
+              ></textarea>
+              <br />
+              <button type="submit">Add Tip</button>
+            </form>
+          </section>
+        </div>
+        <!-- <div class="mainDiv"> -->
+        <% tips.forEach((item)=>{ %>
+        <div class="card"  ">
+          <div class="user">
+            <img class="card-img" src="/assets/Profile-Image.png" alt="" />
+            <div>
+              <h3 class="tipsh3">User 2758</h3>
+              <h2 class="tipsh2"><%= item.title %></h2>
+            </div>
+          </div>
+          <p class="tipsp"><%= item.description %></p>
+          <form action="/showTip/<%=item.id%>" method="GET">
+            <input type="hidden" name="title" value="<%= item.title %>" />
+            <input
+              type="hidden"
+              name="description"
+              value="<%= item.description %>"
+            />
+            <button id="<%=item.id%>" class="edittipbutton">Edit Tip</button>
+          </form>
+        </div>
 
 
 <body >
@@ -81,3 +132,4 @@
   <script src="/js/app.js"></script>
 </body>
 </html>
+

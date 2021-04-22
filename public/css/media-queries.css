@@ -3,3 +3,30 @@
 
 /* details page */
 /* places section */
+@media screen and (max-width: 500px) {
+  .page--header {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  }
+  .hero {
+    grid-template-rows: calc((100 / 654) * 100%) auto;
+  }
+  .useful--hero {
+    grid-template-rows: calc((100 / 654) * 100%);
+  }
+
+  .tips-body {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .team--ctr {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: auto;
+  }
+}
+@media screen and (max-width: 400px) {
+  .user {
+    display: block;
+    text-align: center;
+  }
+}
