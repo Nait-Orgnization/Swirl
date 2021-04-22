@@ -730,16 +730,21 @@ footer h2 {
   padding: 0em 1.875em;
 }
 
-.vision {
-  width: 115%;
-  height: 55%;
-  padding: 0em 1.875em 1.25em 1.875em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  margin-top: 0.72em;
-  border-radius: 15px;
+
+.vision{
+ 
+  
+    width: 115%;
+    height: 45%;
+    padding: 0em 1.875em 1.25em 1.875em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 0.72em;
+    border-radius: 15px;
+
+
 }
 .vision {
   background: rgba(255, 255, 255, 0.15);
@@ -754,3 +759,24 @@ footer h2 {
   width: 100%;
   height: 100%;
 }
+
+
+
+
+
+.hero--content1 {
+  grid-area: 2/2/2/3;
+  display: flex;
+  text-align: justify;
+  
+  margin-left: 19em;
+
+}
+.hero--content1 div {
+  width: 55%;
+}
+
+.h3about{
+  margin: 2rem 0px 1.38rem 1.1em;
+}
+

@@ -101,7 +101,7 @@ margin-bottom:  0.625em;
   
   font-size:   1.25em;
   margin: 0;
-  color :#22215B;
+  color :#DD006C;
 
 }
 .newTip {
@@ -123,7 +123,7 @@ margin-bottom:  0.625em;
   width: 3.125em;
   border-radius:50% ;
   border: none;
-  background-color: #22215B;
+  background-color: #D71731;
   color: white;
   line-height:3.125em ;
   font-size: 1.625em;
@@ -132,6 +132,15 @@ margin-bottom:  0.625em;
 
 
 }
+.newTip #addBtn:hover,
+.newTip #addBtn:focus ,.newTip #addBtn:active {
+color: #D71731;
+background-color: white;
+border: 3px #D71731 solid;
+transition: 1s all ease;
+
+}
+
 .tipsh4 {
   font-size: 1.625em;
 }
@@ -155,7 +164,7 @@ margin-bottom:  0.625em;
  
   border: none;
   border-radius: 4px;
-  background-color: #22215B;
+  background-color: #D71731;
   color: white;
   width:  8.125em;
   height:  3.125em;
@@ -163,6 +172,14 @@ margin-bottom:  0.625em;
   
 
 }
+
+.edittipbutton:active ,.edittipbutton:hover , .edittipbutton:focus {
+  color: #D71731;
+background-color: white;
+border: 3px #D71731 solid;
+transition: 1s all ease;
+}
+
 
 .tipsp {
   margin-top: 1.25em;
@@ -173,7 +190,7 @@ margin-bottom:  0.625em;
 .edittipbutton {
   border: none;
   border-radius: 4px;
-  background-color: #22215B;
+  background-color: #D71731;
   color: white;
   width:  8.125em;
   height:  3.125em;
@@ -203,56 +220,62 @@ margin-bottom:  0.625em;
 
 }
 .editbody {
-  /* background-color: blue; */
+  
   margin: auto;
-  /* text-align: center; */
+
 }
 .mainedit {
-  /* grid-area: 2/2/2/3; */
-  /* display: grid; */
-  /* grid-template-columns: repeat(auto-fit, minmax(377px, 1fr)); */
-  /* gap: 0px; */
-  /* justify-content: space-around; */
  
-  /* margin-left: 6.25em; */
-  /* margin-right: 6.25em; */
   height: 90vh;
-  /* padding: 40px;
-   */
+ 
    display: grid;
    grid-template-columns:
    calc(((200 / 1360) * 100%)) calc(((960 / 1360) * 100%))
    calc(((200 / 1360) * 100%));
-   /* width: 6.25em; */
-   box-shadow:
-  0 0.6px 2.1px -15px rgba(0, 0, 0, 0.085),
-  0 2px 6.9px -15px rgba(0, 0, 0, 0.125),
-  0 9px 31px -15px rgba(0, 0, 0, 0.21)
-;
+ 
    
 }
 .editimg{
  
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/formimg.jpg');
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/formimage.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size:cover;
-text-align: center;
-
-/* float: right; */
+  text-align: center;
+/* border-radius: 16px; */
+border-top-left-radius: 15px;
+border-bottom-left-radius: 15px;
 padding: 3.125em;
+box-shadow:
+  0 4.5px 16px rgba(0, 0, 0, 0.044),
+  0 15px 53.8px rgba(0, 0, 0, 0.066),
+  0 67px 241px rgba(0, 0, 0, 0.11)
+;
+
 
 }
 .editmiddle {
 display: grid;
-grid-template-columns: 40% 60%
+grid-template-columns: 40% 60%;
+margin-top: 3.125em;
 }
 #updateForm {
-  background-color: white
+  background-color: #ececec;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow:
+  0 4.5px 16px rgba(0, 0, 0, 0.044),
+  0 15px 53.8px rgba(0, 0, 0, 0.066),
+  0 67px 241px rgba(0, 0, 0, 0.11)
+;
 
 }
+
 .editimg-content {
   margin-top: 50%;
+  position: relative;
 
 }
 .imgtitle{
@@ -260,6 +283,7 @@ color: white;
 font-size: 1.625em;
 text-shadow: 0 0 10px #FFFFFF, 2px 5px 5px rgba(0,0,0,0);
 }
+
 .imgp{
   color: #EFFBFF;
   font-size: 1.25em;
@@ -273,4 +297,86 @@ padding: 1.25em;
 height: 4.375em;
 line-height: 2.5em;
 vertical-align: middle;
+margin : 1.25em;
+width: 12.5em;
 }
+.editform {
+  margin-top: 0.25em;
+ text-align: center;
+display : inline-block;
+margin-left :auto;
+margin-right : auto;
+text-align :left ;
+
+}
+.editform label , .editform textarea , .editform input ,.editform button {
+  display: block;
+}
+.editform textarea , .editform input  {
+  width: 100%;
+  padding: 1.25em;
+  color: #2c2c2cd3;
+  border: 1px solid rgba(131, 131, 131, 0.5);
+  border-radius: 6px;
+
+
+}
+.editform textarea:focus , .editform input:focus  {
+  outline: none;
+}
+
+
+.editform h2 {
+  color: rgba(0,0,0,.6);
+  text-shadow: 1px 2px 3px#b65e6a;
+}
+.editform label {
+  color: #D71731;
+  text-indent: 20px;
+}
+.editform button {
+  border: none;
+  border-radius: 4px;
+  background-color: #D71731;
+  color: white;
+  width:  8.125em;
+  height:  3.125em;
+  font-size: 0.875em;
+  text-align: center;
+margin-left: 30%;
+}
+.editform button:hover, .deletbtn:hover , .editform button:focus, .deletbtn:focus{
+ 
+outline: none;
+  box-shadow: 0 0.75em 0.5em -0.4em  #ffddd1;
+  transform: translateY(-0.25em);
+  transition: 0.5s all ease ;
+
+}
+  
+.edit--center img {
+  height:40px ;
+  width: 40px;
+  margin-left:50px;
+  margin-top:20px;
+ margin-bottom: -10px;
+
+}
+.atips {
+  margin-bottom: 20px;
+}
+
+.arrowicon {
+  /* position:absolute ; */
+  width: 1.875em;
+  height: 1.875em;
+  float: left;
+}
+.arrowicon:hover {
+  color: #fff7f8;
+  box-shadow: 0 0 10px #ffddd1, 2px 5px 5px rgba(0,0,0,0);
+  transition: 0.5s all ease ;
+
+
+}
+
