@@ -7,10 +7,10 @@ $('#addBtn').on('click', function () {
   $('#addBtn').hide();
 });
 
-$('#updateForm').hide();
+// $('#updateForm').hide();
 
-$('#updateBtn').on('click', function () {
-  $('#updateForm').toggle();
-});
+// $('#updateBtn').on('click', function () {
+//   $('#updateForm').toggle();
+// });
 
 $('#1,#2,#3,#4,#5,#6,#7,#8,#9,#10').hide();
