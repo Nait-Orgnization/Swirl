@@ -34,7 +34,7 @@ As a user, I want to have the ability to save the places that I viewed `<STREACH
 7. As a developer, I want to follow the SMACSS and the server-side rendering. 
 
 ## User flow 
-![userflow](./public/assets/userflow.png)
+![userflow](./public/assets/userflow.PNG)
 
 ## Pages
 ### Home Page
